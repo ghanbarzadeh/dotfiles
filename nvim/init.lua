@@ -146,7 +146,7 @@ require("lazy").setup({
 	},
 	{
 		"romgrk/barbar.nvim", -- Tabline plugin that improves buffers and tabs
-		event = "BufEnter",
+		-- event = "BufEnter",
 		dependencies = {
 			"lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
 			"nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
@@ -982,9 +982,11 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
--- Improve pasting
-vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Preserve previous word when pasting" })
+-- Inc/dec
+vim.keymap.set('n', '<C-c>', '<C-a>', { noremap = true, silent = true })
 
+-- Improve pasting
+vim.keymap.set("x", "p", [["_dP]], { desc = "Preserve previous word when pasting" })
 vim.keymap.set("n", "<C-y>", ":%y+<CR>", { desc = "Yank all content in file" })
 vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Select all content in file" })
 
