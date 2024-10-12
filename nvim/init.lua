@@ -410,16 +410,16 @@ require("lazy").setup({
 						"--header-insertion=iwyu",
 					},
 				},
-				pyright = {
-					python = {
-						analysis = {
-							autoSearchPaths = true,
-							diagnosticMode = "openFilesOnly",
-							useLibraryCodeForTypes = true,
-							reportDuplicateImport = true,
-						},
-					},
-				},
+				-- pyright = {
+				-- 	python = {
+				-- 		analysis = {
+				-- 			autoSearchPaths = true,
+				-- 			diagnosticMode = "openFilesOnly",
+				-- 			useLibraryCodeForTypes = true,
+				-- 			reportDuplicateImport = true,
+				-- 		},
+				-- 	},
+				-- },
 				lua_ls = {
 					settings = {
 						Lua = {
@@ -489,7 +489,7 @@ require("lazy").setup({
 					-- LSPs
 					"clangd",
 					"lua_ls",
-					"pyright",
+					-- "pyright",
 					"ruff",
 
 					-- DAP
@@ -691,7 +691,8 @@ require("lazy").setup({
 					lua = { "stylua" },
 					json = { "prettierd", "prettier" },
 					markdown = { "prettier" },
-					python = { "isort", "black" },
+					-- python = { "isort", "black" },
+					python = { "isort" },
 					yaml = { "prettier" },
 				},
 				ignore_errors = true,
@@ -891,7 +892,7 @@ vim.opt.showmode = false
 vim.opt.clipboard = "unnamedplus"
 
 -- Enable break indent
--- vim.opt.breakindent = true
+vim.opt.breakindent = true
 
 -- Save undo history
 vim.opt.undofile = true
@@ -1066,5 +1067,6 @@ vim.keymap.set("n", "<leader>cp", ":cprevious<CR>", { desc = "Previous quickfix 
 vim.keymap.set("n", "<leader>li", ":Telescope ros2 interfaces<CR>", { desc = "[ROS 2]: List interfaces" })
 vim.keymap.set("n", "<leader>ln", ":Telescope ros2 nodes<CR>", { desc = "[ROS 2]: List nodes" })
 vim.keymap.set("n", "<leader>la", ":Telescope ros2 actions<CR>", { desc = "[ROS 2]: List actions" })
-vim.keymap.set("n", "<leader>lt", ":Telescope ros2 topics<CR>", { desc = "[ROS 2]: List topics" })
+vim.keymap.set("n", "<leader>ll", ":Telescope ros2 topics_echo<CR>", { desc = "[ROS 2]: echo topics" })
+vim.keymap.set("n", "<leader>lt", ":Telescope ros2 topics_info<CR>", { desc = "[ROS 2]: List topics" })
 vim.keymap.set("n", "<leader>ls", ":Telescope ros2 services<CR>", { desc = "[ROS 2]: List services" })
