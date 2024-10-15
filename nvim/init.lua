@@ -489,8 +489,8 @@ require("lazy").setup({
 					-- LSPs
 					"clangd",
 					"lua_ls",
-					-- "pyright",
-					"ruff",
+					"pyright",
+					-- "ruff",
 
 					-- DAP
 					"codelldb",
@@ -502,6 +502,7 @@ require("lazy").setup({
 					-- Formatters
 					"stylua",
 					"prettier",
+					"black",
 				},
 
 				-- if set to true this will check each tool for updates. If updates
@@ -692,7 +693,7 @@ require("lazy").setup({
 					json = { "prettierd", "prettier" },
 					markdown = { "prettier" },
 					-- python = { "isort", "black" },
-					python = { "isort" },
+					python = { "black" },
 					yaml = { "prettier" },
 				},
 				ignore_errors = true,

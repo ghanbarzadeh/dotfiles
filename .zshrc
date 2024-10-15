@@ -123,7 +123,7 @@ alias l='ls -CF'
 
 # NEOVIM
 export PATH="$PATH:/opt/nvim-linux64/bin"
-alias vim="nvim"
+# alias vim="nvim"
 
 # ROS2
 source /opt/ros/humble/setup.zsh
@@ -155,6 +155,10 @@ alias add_compile_commands="add-compile-commands"
 # argcomplete for ros2 & colcon
 eval "$(register-python-argcomplete3 ros2)"
 eval "$(register-python-argcomplete3 colcon)"
+
+# CARLA
+export CARLA_ROOT=/home/armin/CARLA_0.9.15/
+export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI/carla/dist/carla-0.9.15-py3.10-linux-x86_64.egg
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
