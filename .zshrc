@@ -121,6 +121,9 @@ alias ll='ls -AlF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# For correct tmux folder colors
+eval "$(dircolors -b ~/.dircolors)"
+
 # NEOVIM
 export PATH="$PATH:/opt/nvim-linux64/bin"
 # alias vim="nvim"
