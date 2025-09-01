@@ -1,6 +1,11 @@
 # set -g default-terminal "screen-256color"
 # set -ag terminal-overrides "xterm-256color:RGB"
 
+# Set the Default Path to the Current Pane's Directory
+bind '"' split-window -v -c '#{pane_current_path}'
+bind '%' split-window -h -c '#{pane_current_path}'
+bind c new-window -c '#{pane_current_path}'
+
 # Turn on mouse support
 set -g mouse on
 
