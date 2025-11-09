@@ -4,7 +4,7 @@
 # Set the Default Path to the Current Pane's Directory
 bind '"' split-window -v -c '#{pane_current_path}'
 bind '%' split-window -h -c '#{pane_current_path}'
-bind c new-window -c '#{pane_current_path}'
+bind c new-window -a -c '#{pane_current_path}' -t .
 
 # Turn on mouse support
 set -g mouse on
