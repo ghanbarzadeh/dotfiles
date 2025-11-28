@@ -1,0 +1,14 @@
+[window]
+decorations           = "Full"
+opacity               = 1.0
+startup_mode          = "Maximized"
+
+[font]
+size                  = 13.0
+
+[colors.primary]
+background            = "#1E1E1E"
+foreground            = "#CCCCCC"
+dim_foreground        = "#CCCCCC"
+bright_foreground     = "#CCCCCC"
+

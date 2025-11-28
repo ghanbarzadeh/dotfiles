@@ -19,17 +19,15 @@ sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
 Others:
 
 ```bash
-sudo apt install -y git stow tmux zsh dircolors && \
+sudo apt install -y git stow tmux zsh alacritty && \
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+```bash
 git clone https://github.com/ghanbarzadeh/dotfiles.git ~/dotfiles && \
 cd ~/dotfiles && stow .
 ```
 
-## Shell setup (zsh + Oh My Zsh)
-
-```bash
-chsh -s $(which zsh)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
 ## Tmux setup (tmux + tpm)
 
 ```bash
