@@ -1,0 +1,10 @@
+[user]
+	name = ghanbarzadeh
+	email = agz1986@gmail.com
+[core]
+	editor = nvim
+	ignorecrlf = true
+	fileMode = false
+	autocrlf = input
+[pull]
+	rebase = true

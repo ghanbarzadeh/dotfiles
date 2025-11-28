@@ -1,39 +1,47 @@
-# Windows key repeat delay
+# Dotfiles Setup Guide
 
-```sh
-Set-Location "HKCU:\Control Panel\Accessibility\Keyboard Response"
+This repository contains my personal dotfiles, managed using **GNU Stow**.  
+The goal is to quickly bootstrap a new Linux system with a consistent shell,
+tmux, and Neovim environment.
 
-Set-ItemProperty -Path . -Name AutoRepeatDelay       -Value 200
-Set-ItemProperty -Path . -Name AutoRepeatRate        -Value 30
-Set-ItemProperty -Path . -Name BounceTime            -Value 0
-Set-ItemProperty -Path . -Name DelayBeforeAcceptance -Value 0
-Set-ItemProperty -Path . -Name Flags                 -Value 63
+---
+
+## Install requirements and clone repo
+
+```bash
+sudo apt install -y git stow tmux zsh neovim dircolors && \
+git clone https://github.com/ghanbarzadeh/dotfiles.git ~/dotfiles && \
+cd ~/dotfiles && stow .
 ```
 
-# Oh My Zsh
+## Shell setup (zsh + Oh My Zsh)
 
-```sh
-sudo apt install zsh
+```bash
+chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+## Tmux setup (tmux + tpm)
 
-Change "~/.oh-my-zsh/themes/robbyrussell.zsh-theme" to:
-```sh
-PROMPT="%(?:%{$fg_bold[green]%}%1{➜%} :%{$fg_bold[red]%}%1{➜%} ) %{$fg[cyan]%}%~%{$reset_color%}"
-PROMPT+=' $(git_prompt_info)'
-
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}%1{✗%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
-```
-
-# tmux
-
-Install tmux plugin manager
-```sh
+```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-Run install command: Prefix (ctrl + b) + shift i (I)
+Then start tmux and press ```Prefix + I```. This installs all tmux plugins defined in .tmux.conf.
 
+## SSH key setup
+
+### Generate the key
+
+```bash
+ssh-keygen -t ed25519 -C "agz1986@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
+
+### Add key to github 
+
+Copy the SSH public key to your clipboard and add to github account.
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
