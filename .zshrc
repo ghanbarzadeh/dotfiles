@@ -39,7 +39,7 @@ alias ll='ls -AlF'
 eval "$(dircolors -b ~/.dircolors)"
 
 # NEOVIM
-export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 export CC=clang
 export CXX=clang++

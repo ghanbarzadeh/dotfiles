@@ -8,8 +8,18 @@ tmux, and Neovim environment.
 
 ## Install requirements and clone repo
 
+Neovim: 
+
 ```bash
-sudo apt install -y git stow tmux zsh neovim dircolors && \
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim-linux-x86_64
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+```
+
+Others:
+
+```bash
+sudo apt install -y git stow tmux zsh dircolors && \
 git clone https://github.com/ghanbarzadeh/dotfiles.git ~/dotfiles && \
 cd ~/dotfiles && stow .
 ```
