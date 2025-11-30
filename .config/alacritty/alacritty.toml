@@ -1,14 +1,19 @@
+[env]
+TERM = "xterm-256color"
+
 [window]
-decorations           = "Full"
-opacity               = 1.0
-startup_mode          = "Maximized"
+decorations = "full"
+opacity = 1
+decorations_theme_variant = "Dark"
+startup_mode = "Maximized"
 
 [font]
-size                  = 13.0
+size = 13.0
+
+[scrolling]
+history = 10000
+multiplier = 3
 
 [colors.primary]
 background            = "#1E1E1E"
 foreground            = "#CCCCCC"
-dim_foreground        = "#CCCCCC"
-bright_foreground     = "#CCCCCC"
-
