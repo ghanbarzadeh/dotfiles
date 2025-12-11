@@ -38,8 +38,19 @@ alias ll='ls -AlF'
 # For correct tmux folder colors
 eval "$(dircolors -b ~/.dircolors)"
 
-# NEOVIM
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+NVIM_DIR="/opt/nvim-linux-x86_64/bin"
+
+if [ -d "$NVIM_DIR" ]; then
+    export PATH="$PATH:$NVIM_DIR"
+fi
+
+TEXLIVE_DIR="/usr/local/texlive/2024/bin/x86_64-linux"
+
+if [ -d "$TEXLIVE_DIR" ]; then
+    export PATH="TEXLIVE_DIR:$PATH"
+fi
+
+export PATH=":$PATH"
 
 export CC=clang
 export CXX=clang++
