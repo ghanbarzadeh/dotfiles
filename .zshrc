@@ -50,7 +50,5 @@ if [ -d "$TEXLIVE_DIR" ]; then
     export PATH="TEXLIVE_DIR:$PATH"
 fi
 
-export PATH=":$PATH"
-
 export CC=clang
 export CXX=clang++
